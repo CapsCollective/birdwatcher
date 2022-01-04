@@ -99,15 +99,6 @@ public class Player : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Platform")) grounded = true;
-        else if (collision.gameObject.CompareTag("EnemyBullet") && hitten == false)
-        {
-            hitten = true;
-            hitPink.SetActive(true);
-            rb.useGravity = false;
-            rb.velocity = Vector3.zero;
-            rb.isKinematic = true;
-            StartCoroutine(WaitForRestart());
-        }
     }
 
 
